@@ -32,7 +32,7 @@ const employees = [
   }
 ];
 
-console.log('array of employee data: ',  employees );
+console.log('PROVIDED array of employee data: ',  employees );
 
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
@@ -47,11 +47,64 @@ console.log('array of employee data: ',  employees );
 
 
 // This function will calculate 1 employee's bonus!
-//
-function calculateIndividualEmployeeBonus( employee ) {  
-  // your logic here
-  
-  
-  // return new object with bonus results
+//Those who have a rating of a 2 or below should not receive a bonus.
+// Those who have a rating of a 3 should receive a base bonus of 4% of their base annual income.
+// Those who have a rating of a 4 should receive a base bonus of 6% of their base annual income.
+// Those who have a rating of a 5 should receive a base bonus of 10% of their base annual income.
+// If their employee number is 4 digits long, this means they have been with the company for longer than 15 years, and should receive an additional 5%.
+// However, if their annual income is greater than $65,000, they should have their bonus adjusted down 1%.
+// No bonus can be above 13% or below 0% total.
 
+function calculateIndividualEmployeeBonus( employee ) {  
+//console.log to confirm the array is in the function
+console.log('Incomeing Employee', employee)
+
+let bonusPercentage = 0
+//Those who have a rating of a 2 or below should not receive a bonus.
+if (employee.reviewRating <=2){
+  console.log(`Employee's rating is 2 or less: `)
+  bonusPercentage= 0
 }
+
+// Those who have a rating of a 3 should receive a base bonus of 4% of their base annual income.
+if (employee.reviewRating === 3){
+  console.log(`Employess's rating is 3: `)
+  bonusPercentage += 4
+}
+
+// Those who have a rating of a 4 should receive a base bonus of 6% of their base annual income.
+if (employee.reviewRating === 4){
+  console.log(`Employee's with rating of 4: `)
+  bonusPercentage = 6
+}
+
+// Those who have a rating of a 5 should receive a base bonus of 10% of their base annual income.
+if (employee.reviewRating === 5){
+  console.log(`Employee's with rating of 5: `)
+  bonusPercentage = 10
+}
+
+// If their employee number is 4 digits long, this means they have been with the company for longer than 15 years, and should receive an additional 5%.
+
+
+
+
+
+let mockReturn ={
+  name: 'NAME',
+  bonusPercentage: 'BONUS PERCENTAGE',
+  totalCompensation: 'TOTAL COMPESATION',
+  totalBonus: 'TOTAL BONUS',
+}
+return mockReturn
+
+
+
+  // your logic here
+
+  // return new object with bonus results
+  }//!End of calculateIndividualEmployeeBonus function
+const testEmployee = calculateIndividualEmployeeBonus(employees[2])
+console.log("Result for individual Employee:", testEmployee)
+
+
