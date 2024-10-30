@@ -84,10 +84,33 @@ if (employee.reviewRating === 5){
   bonusPercentage = 10
 }
 
+console.log('Base bonus', bonusPercentage)
+
+console.log(`\tEmployee Number: ${employee.employeeNumber} - Length: ${employee.employeeNumber.length}`)
+
 // If their employee number is 4 digits long, this means they have been with the company for longer than 15 years, and should receive an additional 5%.
+//Employee number will need to be changed from string to a number.
 
+          //here we're accessing the employeeNumber string.  When we call the .length it will coundt the letters/spaces
+const employeeNumberDig= employee.employeeNumber.length
+              
+if (employeeNumberDig === 4){
+    console.log(`\tI'm getting a pool!`)
+    bonusPercentage += 5
+}
+ console.log('\tbonus after digit count', bonusPercentage)
 
+// console.log("\tBase Bonus: ", bonusPercentage)
 
+// console.log(`\tEmployee Number: ${employee.employeeNumber} - Length: ${employee.employeeNumber.length}`)
+
+// const employeeNumberDig = employee.employeeNumber.length
+// // If their employee number is 4 digits long, this means they have been with the company for longer than 15 years, and should receive an additional 5%.
+// if (employeeNumberDig === 4) {
+//   console.log("\tEmployee has been around for a while!")
+//   bonusPercentage += 5
+// }
+// console.log("\tBonus after digit count:", bonusPercentage)
 
 
 let mockReturn ={
@@ -104,7 +127,7 @@ return mockReturn
 
   // return new object with bonus results
   }//!End of calculateIndividualEmployeeBonus function
-const testEmployee = calculateIndividualEmployeeBonus(employees[2])
-console.log("Result for individual Employee:", testEmployee)
+const testEmployee =calculateIndividualEmployeeBonus(employees[0])
+console.log("Result for individual Employee:", employees[0])
 
 
